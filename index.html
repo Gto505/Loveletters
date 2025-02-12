@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tägliche Liebesnachricht</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            text-align: center;
+            background-color: #f9f5f0;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #b76e79;
+        }
+        .message {
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff8e1;
+            border-left: 5px solid #b76e79;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Meine tägliche Liebesbotschaft für dich 💌</h1>
+        <p id="date"></p>
+        <div class="message" id="message"></div>
+    </div>
+    
+    <script>
+        const messages = {
+            "27.02.2025": "Die ersten Stunden ohne dich fühlen sich seltsam an, aber meine Gedanken sind immer bei dir.<br><br>ساعت‌های اول بدون تو عجیب به نظر می‌رسد، اما فکر من همیشه پیش توست.",
+            "28.02.2025": "Jeder Tag, den wir getrennt sind, bringt uns noch näher zusammen.<br><br>هر روزی که از هم دوریم، ما را به هم نزدیک‌تر می‌کند.",
+            "01.03.2025": "Unsere Liebe kennt keine Entfernung – nur Sehnsucht und Vorfreude.<br><br>عشق ما فاصله نمی‌شناسد – فقط دلتنگی و انتظار.",
+            "01.07.2025": "Nur noch ein paar Stunden, dann bin ich endlich wieder in deinen Armen! 💕<br><br>فقط چند ساعت دیگر و دوباره در آغوش تو خواهم بود! 💕"
+        };
+        
+        function showMessage() {
+            const today = new Date();
+            const dateString = today.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+            document.getElementById("date").innerText = "Heute ist der " + dateString;
+            document.getElementById("message").innerHTML = messages[dateString] || "Heute gibt es keine Nachricht. Ich liebe dich! 💕";
+        }
+
+        showMessage();
+    </script>
+</body>
+</html>
